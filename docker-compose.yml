@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: php-apache-composer-container
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
